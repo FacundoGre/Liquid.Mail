@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liquid.Mail</title>
+
+    <link rel="icon" type="./multimedia/image/png" href="liquidmail logo completo.png">
+
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+</head>
+
+<body>
+    <div class="bubbles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </div>
+    <audio id="underwater-sound" src="./multimedia/underwater.wav" loop preload="auto" volume="0.3"></audio>
+    <audio id="bubble-sound" src="./multimedia/bubble.wav" preload="auto"></audio>
+    <audio id="receive-sound" src="./multimedia/bubblesrecieve.wav" preload="auto"></audio>
+    <audio id="copy-sound" src="./multimedia/doublebubble.wav" preload="auto"></audio>
+    <audio id="generate-sound" src="./multimedia/singleBubble.wav" preload="auto"></audio>
+    <audio id="explosion-sound" src="./multimedia/bubbleExplosion.wav" preload="auto"></audio>
+    <div class="container">
+        <img src="./multimedia/liquidmail logo.png" alt="LiquidMail Logo" class="app-logo">
+
+        <div class="main-controls">
+            <button id="generate-email">Generar Nueva Dirección</button>
+        </div>
+
+        <div class="email-display">
+            <h2>Tu Dirección de Email Actual:</h2>
+            <div id="current-email-container">
+                <span id="current-email">Aún no se ha generado una dirección.</span>
+                <button id="copy-email" class="hidden">Copiar</button>
+            </div>
+        </div>
+
+        <div class="inbox-container">
+            <h2>Bandeja de Entrada</h2>
+            <div class="inbox-controls-bar"
+                style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                <button id="refresh-inbox">Actualizar Bandeja</button>
+                <button id="delete-selected-emails" style="background-color: #ff5555;">Eliminar Seleccionados</button>
+            </div>
+            <div id="inbox-messages">
+                <p>Acá van a aparecer tus correos.</p>
+            </div>
+        </div>
+
+        <div class="saved-emails-container">
+            <h2>Direcciones Guardadas</h2>
+            <ul id="saved-emails-list">
+            </ul>
+        </div>
+    </div>
+
+    <div id="email-modal" class="modal">
+        <div class="modal-content">
+
+            <span class="close-button" id="close-modal-btn">
+                <span class="close-icon-fua" data-text="×">×</span>
+            </span>
+
+            <h2 id="modal-subject"></h2>
+            <p><strong>De:</strong> <span id="modal-from"></span></p>
+            <p><strong>Fecha:</strong> <span id="modal-date"></span></p>
+            <hr>
+            <div id="modal-body"></div>
+
+            <hr id="attachments-hr" class="hidden">
+            <div id="modal-attachments" class="attachments-container hidden">
+                <h3>Archivos Adjuntos:</h3>
+                <div id="attachments-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/app.js"></script>
+</body>
+
+</html>
